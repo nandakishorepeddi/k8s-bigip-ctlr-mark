@@ -4,7 +4,7 @@ The F5 IPAM Controller is a Docker container that allocates IP addresses from an
 
 This diagram demonstrates the IPAM solution
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ipam/diagrams/2021-04-26_14-13-25.png)
+![diagram](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ipam/diagrams/2021-04-26_14-13-25.png)
 
 Demo on YouTube [video](https://www.youtube.com/watch?v=s9iUZoRqYQs)
 
@@ -57,7 +57,7 @@ kubectl create -f f5-bigip-node.yaml
 **note** f5-bigip-node is for Flannel CNI
 
 
-cis-deployment [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/ipam/cis-deployment)
+cis-deployment [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/ipam/cis-deployment)
 
 ## Step 2: Configure F5 IPAM Controller
 
@@ -87,7 +87,7 @@ kubectl create -f f5-ipam-rbac.yaml
 kubectl create -f f5-ipam-persitentvolume.yaml
 kubectl create -f f5-ipam-deployment.yaml
 ```
-ipam-deployment [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/ipam/ipam-deployment)
+ipam-deployment [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/ipam/ipam-deployment)
 
 Validate both CIS and IPAM deployments
 
@@ -198,7 +198,7 @@ kubectl create -f vs-mysite.yaml
 kubectl create -f vs-myapp.yaml
 ```
 
-crd-example [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/ipam/crd-example)
+crd-example [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/ipam/crd-example)
 
 Validate the CRDs are created correctly
 

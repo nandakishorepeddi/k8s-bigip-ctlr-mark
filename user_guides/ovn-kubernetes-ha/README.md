@@ -2,7 +2,7 @@
 
 This document demonstrates how to use **OVN-Kubernetes with F5 BIG-IP HA Routes** to Ingress traffic without using an Overlay. Using OVN-Kubernetes with F5 BIG-IP Routes removes the complexity of creating VXLAN tunnels or using Calico. This document demonstrates **High Availability (HA) BIG-IP's working with OVN-Kubernetes**. Diagram below demonstrates a OpenShift 4.11 Cluster with three masters and three worker nodes. The three applications; **tea,coffee and mocha** are deployed in the **cafe** namespace. As you can see from the diagram below the **cafe** namespace requires an annotation for the BIG-IP self-ip. 
 
-![architecture](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-10-18_14-57-50.png)
+![architecture](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-10-18_14-57-50.png)
 
 Demo on YouTube [video](https://youtu.be/Hzz_UFzU7UA)
 
@@ -58,7 +58,7 @@ tmsh create /net route 10.128.2.0/23 gw 10.192.125.177
 ```
 View static routes created on BIG-IP
 
-![routes](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-10-12_13-30-34.png)
+![routes](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-10-12_13-30-34.png)
 
 **Note:** Manually sync the BIG-IP so the routes are deployed on the standby
 
@@ -76,7 +76,7 @@ metadata:
     kubernetes.io/metadata.name: default
   name: cafe
 ```
-routing-external-gws [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/demo-app/cafe/name-cafe.yaml)
+routing-external-gws [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/demo-app/cafe/name-cafe.yaml)
 
 **Setup complete!** Deploy CIS and create OpenShift Routes
 
@@ -143,7 +143,7 @@ oc create -f f5-bigip-ctlr-01-deployment.yaml
 oc create -f f5-bigip-ctlr-02-deployment.yaml
 ```
 
-CIS [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/ovn-kubernetes-ha/next-gen-route/cis)
+CIS [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/ovn-kubernetes-ha/next-gen-route/cis)
 
 Validate both CIS instances are running 
 
@@ -183,7 +183,7 @@ Deploy global ConfigMap
 ```
 oc create -f global-cm.yaml
 ```
-ConfigMap [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/next-gen-route/route/global-cm.yaml)
+ConfigMap [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/next-gen-route/route/global-cm.yaml)
 
 ### Step 6 Creating OpenShift Routes for cafe.example.com
 
@@ -200,20 +200,20 @@ oc create -f route-coffee-edge.yaml
 oc create -f route-mocha-edge.yaml
 ```
 
-Routes [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/ovn-kubernetes-ha/next-gen-route/route/cafe/secure)
+Routes [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/ovn-kubernetes-ha/next-gen-route/route/cafe/secure)
 
 Validate OpenShift Routes using the BIG-IP
 
-![big-ip route](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-06-07_15-35-21.png)
+![big-ip route](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-06-07_15-35-21.png)
 
 Validate OpenShift Virtual IP using the BIG-IP
 
-![big-ip pools](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-06-07_15-37-33.png)
+![big-ip pools](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-06-07_15-37-33.png)
 
 Validate OpenShift Routes policies on the BIG-IP
 
-![traffic](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-06-07_15-38-08.png)
+![traffic](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-06-07_15-38-08.png)
 
 Validate OpenShift Routes policies by connecting to the Public IP
 
-![traffic](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-10-12_13-46-30.png)
+![traffic](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ovn-kubernetes-ha/diagram/2022-10-12_13-46-30.png)
