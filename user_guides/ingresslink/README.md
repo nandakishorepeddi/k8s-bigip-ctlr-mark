@@ -1,10 +1,10 @@
 ### User Guide for F5 IngressLink using ClusterIP Mode
 
-* [ClusterIP](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ingresslink/clusterip/README.md)
+* [ClusterIP](https://github.com/nandakishorepeddi/k8s-bigip-ctlr-mark/blob/main/user_guides/ingresslink/clusterip/README.md)
 
 ### User Guide for F5 IngressLink using NodePort Mode
 
-* [NodePort](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/ingresslink/nodeport/README.md)
+* [NodePort](https://github.com/nandakishorepeddi/k8s-bigip-ctlr-mark/blob/main/user_guides/ingresslink/nodeport/README.md)
 
 ### Documentation on F5 CloudDocs
 
