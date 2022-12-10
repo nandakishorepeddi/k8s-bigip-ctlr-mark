@@ -16,7 +16,7 @@ Demo on YouTube [video](https://youtu.be/51zatEVLBEM)
 
 * Install the Helm chart using the following command:
 
-    helm install -f https://raw.githubusercontent.com/nandakishorepeddi/k8s-bigip-ctlr/main/user_guides/rancher/simple-install/cis-deployment/cis-k8s-custom-resource-values.yaml f5-bigip-ctlr f5-stable/f5-bigip-ctlr
+    helm install -f https://raw.githubusercontent.com/nandakishorepeddi/k8s-bigip-ctlr-mark/main/user_guides/rancher/simple-install/cis-deployment/cis-k8s-custom-resource-values.yaml f5-bigip-ctlr f5-stable/f5-bigip-ctlr
 
 #### Creating the CIS deployment from the Helm Chart
 
@@ -27,7 +27,7 @@ secret/f5-bigip-ctlr-login created
 > helm repo add f5-stable https://f5networks.github.io/charts/stable
 "f5-stable" has been added to your repositories
 
-> helm install -f https://raw.githubusercontent.com/nandakishorepeddi/k8s-bigip-ctlr/main/user_guides/rancher/simple-install/cis-deployment/cis-k8s-custom-resource-values.yaml f5-bigip-ctlr f5-stable/f5-bigip-ctlr
+> helm install -f https://raw.githubusercontent.com/nandakishorepeddi/k8s-bigip-ctlr-mark/main/user_guides/rancher/simple-install/cis-deployment/cis-k8s-custom-resource-values.yaml f5-bigip-ctlr f5-stable/f5-bigip-ctlr
 creating 5 resource(s)
 beginning wait for 5 resources with timeout of 1m0s
 creating 5 resource(s)
@@ -53,14 +53,14 @@ Using Routes in OpenShift? No helm chart yet, but we do have great documentation
 
 View installed Apps from the Rancher dashboard as shown in the example
 
-![installed-apps](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/rancher/simple-install/diagrams/2021-11-10_13-10-48.png)
+![installed-apps](https://github.com/nandakishorepeddi/k8s-bigip-ctlr-mark/blob/main/user_guides/rancher/simple-install/diagrams/2021-11-10_13-10-48.png)
 
 Validate that CIS is deployed and running from the Deployment tab in the Rancher Dashboard
 
-![validate](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/rancher/simple-install/diagrams/2021-11-10_13-19-00.png)
+![validate](https://github.com/nandakishorepeddi/k8s-bigip-ctlr-mark/blob/main/user_guides/rancher/simple-install/diagrams/2021-11-10_13-19-00.png)
 
 Select the **Deployment: f5-bigip-ctlr** from the Deployment tab in the Rancher Dashboard
 
-![validate](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/rancher/simple-install/diagrams/2021-11-10_13-22-43.png)
+![validate](https://github.com/nandakishorepeddi/k8s-bigip-ctlr-mark/blob/main/user_guides/rancher/simple-install/diagrams/2021-11-10_13-22-43.png)
 
 **Congratulations CIS is deployed in Rancher**
