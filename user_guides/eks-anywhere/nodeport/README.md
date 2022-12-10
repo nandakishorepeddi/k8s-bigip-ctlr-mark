@@ -8,7 +8,7 @@ NodePort is named quite literally like many other functional components within K
 
 NodePort is great, but it has a few limitations. Ports available to NodePort are in the 30,000 to 32,767 range
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/diagram/2021-08-18_16-06-49.png)
+![diagram](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/diagram/2021-08-18_16-06-49.png)
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ kubectl create clusterrolebinding k8s-bigip-ctlr-clusteradmin --clusterrole=clus
 kubectl create -f f5-cluster-deployment.yaml
 ```
 
-* cis-deployment [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/cis-deployment/f5-cluster-deployment.yaml)
+* cis-deployment [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/cis-deployment/f5-cluster-deployment.yaml)
 
 ### Step 2 Create the APP Service and Deployment
 
@@ -54,7 +54,7 @@ kubectl create -f f5-demo-test-service.yaml
 kubectl create -f f5-demo-production-service.yaml
 ```
 
-pod-deployments [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/eks-anywhere/nodeport/pod-deployment)
+pod-deployments [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/eks-anywhere/nodeport/pod-deployment)
 
 ### Step 3 Create the CRD and Schema
 
@@ -65,15 +65,15 @@ kubectl create -f customresourcedefinitions.yaml
 kubectl create -f vs-myapp.yaml
 ```
 
-crd-example [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/eks-anywhere/nodeport/crd-example)
+crd-example [repo](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/tree/main/user_guides/eks-anywhere/nodeport/crd-example)
 
 ### Step 4 Validate virtual server connectivity 
 
 Validate the virtual server configuration on the BIG-IP and connectivity to virtual server
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/diagram/2021-08-18_16-11-08.png)
+![diagram](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/diagram/2021-08-18_16-11-08.png)
 
 Connect to the external IP
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/diagram/2021-08-18_16-36-04.png)
+![diagram](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/eks-anywhere/nodeport/diagram/2021-08-18_16-36-04.png)
 

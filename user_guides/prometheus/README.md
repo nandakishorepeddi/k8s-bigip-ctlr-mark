@@ -2,7 +2,7 @@
 
 Prometheus is an open source monitoring framework. This user-guide covers setup of Prometheus for BIG-IP and CIS using F5 Telemetry Streaming. In this user-guide, Prometheus is deployed in Kubernetes and configured via a ConfigMap. BIG-IP is load balancing the management traffic to the Prometheus-UI via an Ingress automated via CIS as shown in the diagram below.
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2021-06-03_14-03-16.png)
+![diagram](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2021-06-03_14-03-16.png)
 
 Demo on YouTube [video](https://www.youtube.com/watch?v=efN4fXWjkUo)
 
@@ -14,7 +14,7 @@ Create a Kubernetes namespace for all our monitoring components
 ```
 kubectl create namespace monitoring
 ```
-Create a file named clusterRole.yaml. Locate the clusterRole.yaml file from my repo [yaml](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/clusterRole.yaml)
+Create a file named clusterRole.yaml. Locate the clusterRole.yaml file from my repo [yaml](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/clusterRole.yaml)
 ```
 kubectl create -f clusterRole.yaml
 ```
@@ -23,7 +23,7 @@ kubectl create -f clusterRole.yaml
 
 Create a ConfigMap with all the prometheus scrape config and alerting rules, which will be mounted to the Prometheus container in /etc/prometheus as prometheus.yaml and prometheus.rules files
 
-Create a file called config-map.yaml. Locate the config-map.yaml file from my repo [yaml](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/config-map.yaml)
+Create a file called config-map.yaml. Locate the config-map.yaml file from my repo [yaml](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/config-map.yaml)
 ```
 kubectl create -f config-map.yaml
 ```
@@ -31,7 +31,7 @@ The prometheus.yaml contains all the configuration to dynamically discover pods 
 
 ### Create a Prometheus Deployment
 
-Create a file named prometheus-deployment.yaml. Locate the prometheus-deployment.yaml file from my repo [yaml](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/prometheus-deployment.yaml)
+Create a file named prometheus-deployment.yaml. Locate the prometheus-deployment.yaml file from my repo [yaml](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/prometheus-deployment.yaml)
 ```
 kubectl create  -f prometheus-deployment.yaml
 ```
@@ -69,7 +69,7 @@ spec:
 ```
 The annotations in the above service YAML makes sure that the service endpoint is scrapped by Prometheus. The prometheus.io/port should always be the target port mentioned in service YAML
 
-Create the service using the following command. Locate the prometheus-service.yaml file from my repo [yaml](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/prometheus-service.yaml)
+Create the service using the following command. Locate the prometheus-service.yaml file from my repo [yaml](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/prometheus-service.yaml)
 
 ```
 kubectl create -f prometheus-service.yaml -n monitoring
@@ -105,14 +105,14 @@ spec:
 ```
 The annotations in the above Ingress provides the public virtual-IP used to connect the prometheus-ui. BIG-IP will terminate SSL and work traffic to the pod on port 8080. You can also add additional security setting to the Ingress resource to prevent the prometheus-ui from web attacks.
 
-Create the Ingress using the following command. Locate the prometheus-ingress.yaml file from my repo [yaml](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/prometheus-ingress.yaml)
+Create the Ingress using the following command. Locate the prometheus-ingress.yaml file from my repo [yaml](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/prometheus-deployment/prometheus-ingress.yaml)
 
 ```
 kubectl create -f prometheus-ingress.yaml -n monitoring
 ```
 Once created, you can access the Prometheus dashboard using the virtual IP address
 
-![Image of CRDs](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2020-05-11_16-28-32.png)
+![Image of CRDs](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2020-05-11_16-28-32.png)
 
 ## Configure BIG-IP Telemetry Streaming for Prometheus
 
@@ -214,7 +214,7 @@ Add BIG-IP and CIS job_name to the config-map.yaml so it applies the configurati
 
 Check the targets Prometheus dashboard to make sure Prometheus is able to pull BIG-IP and CIS
 
-![Image of Target](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2021-06-03_15-09-19.png)
+![Image of Target](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2021-06-03_15-09-19.png)
 
 There are many metrics available to graph or monitor. Example below virtualServers current connections. Use the label to graph the metric desired.
 ```
@@ -226,4 +226,4 @@ f5_clientside_curConns{virtualServers="/k8s_AS3/Shared/ingress_10_192_75_108_80"
 ```
 Graph displaying concurrent connection
 
-![Image of graph](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2020-05-12_16-08-21.png)
+![Image of graph](https://github.com/nandakishorepeddi/k8s-bigip-ctlr/blob/main/user_guides/prometheus/diagrams/2020-05-12_16-08-21.png)
